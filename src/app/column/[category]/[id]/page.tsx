@@ -98,7 +98,7 @@ export default async function ColumnPage({ params }: { params: Promise<{ categor
 const col = COLUMNS[category]?.[Number(id)]
   if (!col) notFound()
   const catLabel = CAT_LABEL[category] || ''
-  const idNum = Number(params.id)
+  const idNum = Number(id)
   return (
     <main style={{ maxWidth: 480, margin: '0 auto', padding: '16px 16px 48px' }}>
       <div style={{ marginBottom: 16 }}>
