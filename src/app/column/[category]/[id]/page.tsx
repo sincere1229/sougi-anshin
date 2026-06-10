@@ -93,7 +93,7 @@ const col = COLUMNS[category]?.[Number(id)]
   return { title: `${col.title} | 葬儀ナビ`, description: col.body.slice(0, 80) + '...' }
 }
 
-export default function ColumnPage({ params }: { params: Promise<{ category: string; id: string }> }) {
+export default async function ColumnPage({ params }: { params: Promise<{ category: string; id: string }> }) {
   const { category, id } = await params
 const col = COLUMNS[category]?.[Number(id)]
   if (!col) notFound()
