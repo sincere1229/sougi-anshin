@@ -86,13 +86,13 @@ export async function generateStaticParams() {
   return params
 }
 
-export async function generateMetadata({ params }: { params: { category: string; id: string } }): Promise<Metadata> {
+export async function generateMetadata({ params }: { params: { params: Promise<{ category: string; id: string }> }): Promise<Metadata> {
   const col = COLUMNS[params.category]?.[Number(params.id)]
   if (!col) return {}
   return { title: `${col.title} | 葬儀ナビ`, description: col.body.slice(0, 80) + '...' }
 }
 
-export default function ColumnPage({ params }: { params: { category: string; id: string } }) {
+export default function ColumnPage({ params }: { params: Promise<{ category: string; id: string }> }) {
   const col = COLUMNS[params.category]?.[Number(params.id)]
   if (!col) notFound()
   const catLabel = CAT_LABEL[params.category] || ''
