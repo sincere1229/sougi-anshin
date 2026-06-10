@@ -2,6 +2,9 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
 
+export const dynamic = 'force-static'
+export const dynamicParams = false
+
 const COLUMNS: Record<string, Record<number, { title: string; body: string; a8: { name: string; url: string; desc: string }[] }>> = {
   'hajimete': {
     1: { title: "親が亡くなったら最初にすること", body: "死亡直後から7日以内にやるべき手続きを時系列で解説します。", a8: [{"name": "VERY CARD（弔電）", "url": "https://px.a8.net/svt/ejp?a8mat=1JYRN6+32Q4+691UQ+XXXXXX", "desc": "葬儀に届ける弔電。最短当日発送対応。"}, {"name": "ライフリセット（遺品整理）", "url": "https://px.a8.net/svt/ejp?a8mat=1GZLMA+36X8+1ZGG0Y+XXXXXX", "desc": "遺品整理のプロ。全国対応・即日見積もり無料。"}] },
