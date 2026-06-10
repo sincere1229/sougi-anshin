@@ -90,7 +90,7 @@ export async function generateMetadata({ params }: { params: Promise<{ category:
   const { category, id } = await params
   const col = COLUMNS[category]?.[Number(id)]
   if (!col) return {}
-  return { title: `${col.title} | 実家どうするナビ`, description: col.body.slice(0, 80) + '...' }
+  return { title: `${col.title} | 葬儀あんしんナビ`, description: col.body.slice(0, 80) + '...' }
 }
 
 export default async function ColumnPage({ params }: { params: Promise<{ category: string; id: string }> }) {
