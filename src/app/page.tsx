@@ -35,15 +35,15 @@ export default function Home() {
       <h2 style={{ fontSize: 14, fontWeight: 700, color: '#374151', marginBottom: 12 }}>5つの無料診断</h2>
       <div style={{ display: 'flex', flexDirection: 'column', gap: 10, marginBottom: 32 }}>
         {DIAGNOSES.map(d => (
-         <Link key={d.id} href={d.href}>
-  <div>
-    <div>{d.emoji}</div>
-    <h3>{d.title}</h3>
-    <p>{d.desc}</p>
-    <small>{d.time}</small>
-  </div>
-  <span>›</span>
-</Link>
+          <Link key={d.id} href={d.href} style={{ display: 'flex', gap: 14, background: '#fff', border: '0.5px solid #e5e7eb', borderRadius: 12, padding: '14px 16px', textDecoration: 'none', alignItems: 'center' }}>
+            <div style={{ fontSize: 28, flexShrink: 0 }}>{d.emoji}</div>
+            <div style={{ flex: 1, minWidth: 0 }}>
+              <div style={{ fontSize: 14, fontWeight: 700, color: '#1f2937', marginBottom: 3 }}>{d.title}</div>
+              <div style={{ fontSize: 12, color: '#6b7280', marginBottom: 4 }}>{d.desc}</div>
+              <div style={{ fontSize: 11, color: d.color, fontWeight: 600 }}>{d.time}</div>
+            </div>
+            <div style={{ fontSize: 16, color: '#d1d5db', flexShrink: 0 }}>›</div>
+          </Link>
         ))}
       </div>
 
@@ -55,7 +55,7 @@ export default function Home() {
         {COLUMNS.map((c, i) => (
           <Link key={i} href={`/column/${c.cat}/${c.id}`}
             style={{ display: 'block', background: '#fff', border: '0.5px solid #e5e7eb', borderRadius: 10, padding: '12px 14px', textDecoration: 'none' }}>
-            <span style={{ fontSize: 13, color: '#374151', lineHeight: 1.5 }}>{}</span>
+            <span style={{ fontSize: 13, color: '#374151', lineHeight: 1.5 }}>{c.title}</span>
           </Link>
         ))}
       </div>
