@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import DiagnosisShell from '@/components/DiagnosisShell'
 export const metadata: Metadata = {
-  title: '葬儀スタイル診断 | 葬儀ナビ',
+  title: '葬儀スタイル診断 | やさしい葬儀ナビ',
   description: '10問・約3分。家族葬・一般葬・直葬・一日葬の中から家族に合う葬儀スタイルがわかる無料診断。',
 }
 export default function Page() {
@@ -20,22 +20,27 @@ export default function Page() {
       ]}
       recommendServices={[
         {
-                "name": "ライフリセット（遺品整理）",
-                "url": "https://px.a8.net/svt/ejp?a8mat=4B5LK3+1GZLMA+36X8+1ZHAW1",
-                "description": "遺品整理のプロが対応。全国対応・即日見積もり無料。",
-                "forWho": "",
-                "notFor": "",
-                "badge": "遺品整理"
+          name: '家族葬のこれから',
+          url: 'https://px.a8.net/svt/ejp?a8mat=4B5LK3+1FSQEQ+5PHI+5ZMCH',
+          description: '火葬プランなら最安86,900円〜。シンプルで温かい家族葬が全国対応。',
+          forWho: '', notFor: '',
+          badge: '家族葬',
         },
         {
-                "name": "VERY CARD（電報・弔電）",
-                "url": "https://px.a8.net/svt/ejp?a8mat=4B5LK3+1JYRN6+32Q4+5ZU29",
-                "description": "葬儀に届ける弔電。最短当日発送対応。",
-                "forWho": "",
-                "notFor": "",
-                "badge": "電報"
-        }
-]}
+          name: 'VERY CARD（電報・弔電）',
+          url: 'https://px.a8.net/svt/ejp?a8mat=4B5LK3+1JYRN6+32Q4+5ZU29',
+          description: '葬儀に届ける弔電。490文字まで無料・最短当日発送対応。',
+          forWho: '', notFor: '',
+          badge: '電報',
+        },
+        {
+          name: 'ライフリセット（遺品整理）',
+          url: 'https://px.a8.net/svt/ejp?a8mat=4B5LK3+1GZLMA+36X8+1ZHAW1',
+          description: '遺品整理のプロが対応。全国対応・即日見積もり無料。',
+          forWho: '', notFor: '',
+          badge: '遺品整理',
+        },
+      ]}
     />
   )
 }
