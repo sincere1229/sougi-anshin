@@ -21,7 +21,7 @@ export default function Page() {
       recommendServices={[
         {
                 "name": "VERY CARD（電報・弔電）",
-                "url": "https://px.a8.net/svt/ejp?a8mat=1JYRN6+32Q4+691UQ+XXXXXX",
+                "url": "https://px.a8.net/svt/ejp?a8mat=4B5LK3+1JYRN6+32Q4+5ZU29",
                 "description": "終活の一環として弔電サービスも事前に把握しておきましょう。",
                 "forWho": "",
                 "notFor": "",
@@ -29,7 +29,7 @@ export default function Page() {
         },
         {
                 "name": "墓石ナビ（墓石一括見積）",
-                "url": "https://px.a8.net/svt/ejp?a8mat=1I6GTU+46CI+BX3J6+XXXXXX",
+                "url": "https://px.a8.net/svt/ejp?a8mat=4B5LK3+1I6GTU+46CI+BYLJL",
                 "description": "終活でお墓を検討中の方は一括見積もりで比較を。",
                 "forWho": "",
                 "notFor": "",
