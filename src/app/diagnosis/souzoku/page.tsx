@@ -21,7 +21,7 @@ export default function Page() {
       recommendServices={[
         {
                 "name": "ライフリセット（遺品整理）",
-                "url": "https://px.a8.net/svt/ejp?a8mat=1GZLMA+36X8+1ZGG0Y+XXXXXX",
+                "url": "https://px.a8.net/svt/ejp?a8mat=4B5LK3+1GZLMA+36X8+1ZHAW1",
                 "description": "相続後の遺品整理はプロに任せましょう。全国対応。",
                 "forWho": "",
                 "notFor": "",
@@ -29,7 +29,7 @@ export default function Page() {
         },
         {
                 "name": "墓石ナビ（墓石一括見積）",
-                "url": "https://px.a8.net/svt/ejp?a8mat=1I6GTU+46CI+BX3J6+XXXXXX",
+                "url": "https://px.a8.net/svt/ejp?a8mat=4B5LK3+1I6GTU+46CI+BYLJL",
                 "description": "相続と合わせてお墓の準備も一括見積もりで。",
                 "forWho": "",
                 "notFor": "",
