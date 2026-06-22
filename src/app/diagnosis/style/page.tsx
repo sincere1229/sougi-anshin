@@ -21,7 +21,7 @@ export default function Page() {
       recommendServices={[
         {
                 "name": "ライフリセット（遺品整理）",
-                "url": "https://px.a8.net/svt/ejp?a8mat=1GZLMA+36X8+1ZGG0Y+XXXXXX",
+                "url": "https://px.a8.net/svt/ejp?a8mat=4B5LK3+1GZLMA+36X8+1ZHAW1",
                 "description": "遺品整理のプロが対応。全国対応・即日見積もり無料。",
                 "forWho": "",
                 "notFor": "",
@@ -29,7 +29,7 @@ export default function Page() {
         },
         {
                 "name": "VERY CARD（電報・弔電）",
-                "url": "https://px.a8.net/svt/ejp?a8mat=1JYRN6+32Q4+691UQ+XXXXXX",
+                "url": "https://px.a8.net/svt/ejp?a8mat=4B5LK3+1JYRN6+32Q4+5ZU29",
                 "description": "葬儀に届ける弔電。最短当日発送対応。",
                 "forWho": "",
                 "notFor": "",
