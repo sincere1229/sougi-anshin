@@ -1,8 +1,8 @@
 import type { Metadata } from 'next'
 import DiagnosisShell from '@/components/DiagnosisShell'
 export const metadata: Metadata = {
-  title: '終活チェックリスト診断 | 葬儀ナビ',
-  description: '10問・約3分。終活の準備度を判定し、今すぐやるべきことが明確になる無料診断。',
+  title: '終活チェックリスト診断 | やさしい葬儀ナビ',
+  description: '10問・約3分。終活の準備度を判定し、今やるべきことが明確になる無料診断。',
 }
 export default function Page() {
   return (
@@ -20,22 +20,27 @@ export default function Page() {
       ]}
       recommendServices={[
         {
-                "name": "VERY CARD（電報・弔電）",
-                "url": "https://px.a8.net/svt/ejp?a8mat=4B5LK3+1JYRN6+32Q4+5ZU29",
-                "description": "終活の一環として弔電サービスも事前に把握しておきましょう。",
-                "forWho": "",
-                "notFor": "",
-                "badge": "電報"
+          name: '家族葬のこれから',
+          url: 'https://px.a8.net/svt/ejp?a8mat=4B5LK3+1FSQEQ+5PHI+5ZMCH',
+          description: '終活の一環として葬儀プランを事前に確認しておきましょう。',
+          forWho: '', notFor: '',
+          badge: '事前準備',
         },
         {
-                "name": "墓石ナビ（墓石一括見積）",
-                "url": "https://px.a8.net/svt/ejp?a8mat=4B5LK3+1I6GTU+46CI+BYLJL",
-                "description": "終活でお墓を検討中の方は一括見積もりで比較を。",
-                "forWho": "",
-                "notFor": "",
-                "badge": "お墓"
-        }
-]}
+          name: '墓石ナビ（一括見積り）',
+          url: 'https://px.a8.net/svt/ejp?a8mat=4B5LK3+1I6GTU+46CI+BYLJL',
+          description: 'お墓の費用は終活で早めに比較検討を。一括見積り無料。',
+          forWho: '', notFor: '',
+          badge: 'お墓',
+        },
+        {
+          name: 'VERY CARD（電報・弔電）',
+          url: 'https://px.a8.net/svt/ejp?a8mat=4B5LK3+1JYRN6+32Q4+5ZU29',
+          description: '弔電サービスの把握も終活の準備のひとつです。',
+          forWho: '', notFor: '',
+          badge: '電報',
+        },
+      ]}
     />
   )
 }
