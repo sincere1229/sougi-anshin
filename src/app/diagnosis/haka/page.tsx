@@ -21,7 +21,7 @@ export default function Page() {
       recommendServices={[
         {
                 "name": "墓石ナビ（墓石一括見積）",
-                "url": "https://px.a8.net/svt/ejp?a8mat=1I6GTU+46CI+BX3J6+XXXXXX",
+                "url": "https://px.a8.net/svt/ejp?a8mat=4B5LK3+1I6GTU+46CI+BYLJL",
                 "description": "全国の墓石会社に一括見積もり。費用を比較できます。",
                 "forWho": "",
                 "notFor": "",
@@ -29,7 +29,7 @@ export default function Page() {
         },
         {
                 "name": "ライフリセット（遺品整理）",
-                "url": "https://px.a8.net/svt/ejp?a8mat=1GZLMA+36X8+1ZGG0Y+XXXXXX",
+                "url": "https://px.a8.net/svt/ejp?a8mat=4B5LK3+1GZLMA+36X8+1ZHAW1",
                 "description": "墓じまい・改葬の際の遺品整理も対応。",
                 "forWho": "",
                 "notFor": "",
