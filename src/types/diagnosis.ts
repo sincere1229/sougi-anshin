@@ -45,4 +45,8 @@ export interface RecommendService {
   forWho: string
   notFor: string
   badge: string
+  imageUrl?: string
+  imageWidth?: number
+  imageHeight?: number
+  impUrl?: string
 }
