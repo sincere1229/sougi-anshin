@@ -203,7 +203,7 @@ export default function DiagnosisShell({
               padding: '10px 14px', flex: 1,
             }}>
               <p style={{ fontSize: 13, color: '#4a3060', margin: 0, lineHeight: 1.6 }}>
-                診断が完了しました！あなたの結果をお伝えします。
+                診断が完了しました！あなたの状況に合わせた結果をお伝えします。
               </p>
             </div>
           </div>
@@ -272,45 +272,100 @@ export default function DiagnosisShell({
             </Link>
           )}
 
-          {/* しずくおすすめサービス */}
+          {/* しずくおすすめサービス（アフィリエイト強化版） */}
           {recommendServices.length > 0 && (
-            <div style={{ background: '#fff', border: '1px solid #e0d0f5', borderRadius: 12, padding: '16px', marginBottom: 12 }}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 12 }}>
-                <div style={{ width: 28, height: 28, borderRadius: '50%', overflow: 'hidden', position: 'relative', flexShrink: 0 }}>
-                  <Image src="/images/characters/shizuku-smile.png" alt="しずく" fill style={{ objectFit: 'cover' }} />
+            <div style={{
+              background: 'linear-gradient(180deg, #fbf9ff 0%, #ffffff 100%)',
+              border: '2px solid #d5b8f5',
+              borderRadius: 16,
+              padding: '18px 16px',
+              marginBottom: 16,
+              boxShadow: '0 4px 14px rgba(147,112,219,0.08)'
+            }}>
+              {/* セクションヘッダー：親近感と処方箋感の演出 */}
+              <div style={{ display: 'flex', alignItems: 'flex-start', gap: 10, marginBottom: 14 }}>
+                <div style={{ width: 34, height: 34, borderRadius: '50%', overflow: 'hidden', position: 'relative', flexShrink: 0, border: '1.5px solid #e0d0f5' }}>
+                  <Image src="/images/characters/shizuku-care.png" alt="しずく" fill style={{ objectFit: 'cover' }} />
                 </div>
-                <p style={{ fontSize: 13, fontWeight: 600, color: '#2d1f4a', margin: 0 }}>
-                  あなたにおすすめのサービス
-                </p>
+                <div>
+                  <p style={{ fontSize: 14, fontWeight: 800, color: '#2d1f4a', margin: '0 0 2px' }}>
+                    🌿 心残りのないお見送りのための安心案内
+                  </p>
+                  <p style={{ fontSize: 11, color: '#7b5ea0', margin: 0, lineHeight: 1.4 }}>
+                    焦らなくて大丈夫。いざという時に困らないよう、信頼できる無料の窓口を厳選しました。
+                  </p>
+                </div>
               </div>
+
+              {/* サービスカードのループ */}
               {recommendServices.map((s, i) => (
-                <div key={i} style={{ border: '1px solid #e0d0f5', borderRadius: 10, marginBottom: 8, overflow: 'hidden', background: '#fff' }}>
+                <div key={i} style={{
+                  border: '1px solid #e0d0f5',
+                  borderRadius: 12,
+                  marginBottom: 12,
+                  overflow: 'hidden',
+                  background: '#fff',
+                  boxShadow: '0 2px 8px rgba(0,0,0,0.02)'
+                }}>
                   <a href={s.url} target="_blank" rel="nofollow noopener noreferrer"
-                    style={{ display: 'block', padding: '12px', textDecoration: 'none' }}>
+                    style={{ display: 'block', padding: '14px', textDecoration: 'none' }}>
+                    
                     {s.imageUrl && (
-                      <div style={{ textAlign: 'center', marginBottom: 8 }}>
+                      <div style={{ textAlign: 'center', marginBottom: 10 }}>
                         <img
                           src={s.imageUrl}
                           alt={s.name}
                           width={Math.min(s.imageWidth ?? 300, 260)}
                           height={Math.round((s.imageHeight ?? 250) * Math.min(s.imageWidth ?? 300, 260) / (s.imageWidth ?? 300))}
-                          style={{ border: 'none', maxWidth: '100%', maxHeight: 180, objectFit: 'contain', borderRadius: 6 }}
+                          style={{ border: 'none', maxWidth: '100%', maxHeight: 180, objectFit: 'contain', borderRadius: 8 }}
                         />
                       </div>
                     )}
-                    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 4 }}>
-                      <span style={{ fontSize: 13, fontWeight: 600, color: '#1f2937' }}>{s.name}</span>
-                      <span style={{ fontSize: 10, background: '#f5f0ff', color: '#7b52c8', borderRadius: 4, padding: '2px 6px', whiteSpace: 'nowrap' }}>
-                        {s.badge}
-                      </span>
+
+                    {/* タイトル ＆ バッジ */}
+                    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 6, gap: 8 }}>
+                      <span style={{ fontSize: 14, fontWeight: 700, color: '#1f2937' }}>{s.name}</span>
+                      {s.badge && (
+                        <span style={{
+                          fontSize: 10,
+                          fontWeight: 700,
+                          background: '#f5f0ff',
+                          color: '#7b52c8',
+                          border: '0.5px solid #e0d0f5',
+                          borderRadius: 4,
+                          padding: '2px 8px',
+                          whiteSpace: 'nowrap'
+                        }}>
+                          ✨ {s.badge}
+                        </span>
+                      )}
                     </div>
-                    <p style={{ fontSize: 12, color: '#6b7280', margin: '0 0 8px', lineHeight: 1.5 }}>{s.description}</p>
-                    <div style={{
-                      background: '#5b3fa0', color: '#fff',
-                      borderRadius: 6, padding: '8px', textAlign: 'center', fontSize: 12, fontWeight: 700,
-                    }}>
-                      詳しく見てみる →
+
+                    {/* 説明文 */}
+                    <p style={{ fontSize: 12, color: '#4b5563', margin: '0 0 12px', lineHeight: 1.6 }}>
+                      {s.description}
+                    </p>
+
+                    {/* マイクロコピーと強力なCTAボタン */}
+                    <div style={{ textAlign: 'center' }}>
+                      <p style={{ fontSize: 10, color: '#7b52c8', fontWeight: 700, margin: '0 0 4px', letterSpacing: '0.02em' }}>
+                        ＼ 24時間365日対応・まずは無料の資料請求からで安心 ／
+                      </p>
+                      <div style={{
+                        background: 'linear-gradient(135deg, #7b52c8 0%, #5b3fa0 100%)',
+                        color: '#fff',
+                        borderRadius: 8,
+                        padding: '10px 16px',
+                        textAlign: 'center',
+                        fontSize: 13,
+                        fontWeight: 700,
+                        boxShadow: '0 4px 12px rgba(123, 82, 200, 0.25)',
+                        transition: 'transform 0.2s'
+                      }}>
+                        公式ページで無料相談・資料請求をしてみる ➔
+                      </div>
                     </div>
+
                   </a>
                   {s.impUrl && (
                     <img src={s.impUrl} width={1} height={1} style={{ border: 'none', display: 'block' }} loading="lazy" alt="" />
