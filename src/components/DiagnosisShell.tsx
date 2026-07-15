@@ -44,19 +44,45 @@ export default function DiagnosisShell({
   const [answers, setAnswers] = useState<string[]>([])
   const [result, setResult] = useState<ResultTemplate | null>(null)
   const [loading, setLoading] = useState(true)
+  const [loadError, setLoadError] = useState(false)
+  const [retryCount, setRetryCount] = useState(0)
 
   useEffect(() => {
-    Promise.all([
-      fetch(questionsCsvPath).then(r => r.text()),
-      fetch(resultsCsvPath).then(r => r.text()),
-    ]).then(([qText, rText]) => {
-      const q = Papa.parse<Question>(qText, { header: true, skipEmptyLines: true })
-      const r = Papa.parse<ResultTemplate>(rText, { header: true, skipEmptyLines: true })
-      setQuestions(q.data)
-      setResults(r.data)
-      setLoading(false)
-    })
-  }, [questionsCsvPath, resultsCsvPath])
+    let cancelled = false
+    setLoading(true)
+    setLoadError(false)
+
+    async function load() {
+      try {
+        const [qRes, rRes] = await Promise.all([
+          fetch(questionsCsvPath),
+          fetch(resultsCsvPath),
+        ])
+        if (!qRes.ok || !rRes.ok) {
+          throw new Error(
+            `CSV fetch failed: questions=${qRes.status} results=${rRes.status}`
+          )
+        }
+        const [qText, rText] = await Promise.all([qRes.text(), rRes.text()])
+        const q = Papa.parse<Question>(qText, { header: true, skipEmptyLines: true })
+        const r = Papa.parse<ResultTemplate>(rText, { header: true, skipEmptyLines: true })
+        if (cancelled) return
+        setQuestions(q.data)
+        setResults(r.data)
+      } catch (err) {
+        if (cancelled) return
+        console.error('[DiagnosisShell] Failed to load diagnosis data', {
+          diagnosisId, questionsCsvPath, resultsCsvPath, error: err,
+        })
+        setLoadError(true)
+      } finally {
+        if (!cancelled) setLoading(false)
+      }
+    }
+
+    load()
+    return () => { cancelled = true }
+  }, [questionsCsvPath, resultsCsvPath, diagnosisId, retryCount])
 
   const choose = (score: string) => {
     const next = [...answers, score]
@@ -89,6 +115,32 @@ export default function DiagnosisShell({
   const emotion = result ? emotionMap[result.type] : null
   const roadmap = result ? roadmapByType[result.type] : null
   const shizukuImg = getShizukuImage(current, questions.length)
+
+  if (loadError) return (
+    <main style={{ maxWidth: 480, margin: '0 auto', padding: '40px 16px', textAlign: 'center' }}>
+      <div style={{
+        width: 48, height: 48, borderRadius: '50%', overflow: 'hidden',
+        margin: '0 auto 12px', position: 'relative',
+      }}>
+        <Image src="/images/characters/shizuku-care.png" alt="しずく" fill style={{ objectFit: 'cover' }} />
+      </div>
+      <p style={{ color: '#4a3060', fontSize: 14, marginBottom: 4 }}>
+        診断データの読み込みに失敗しました
+      </p>
+      <p style={{ color: '#9370db', fontSize: 12, marginBottom: 20 }}>
+        通信状況をご確認の上、もう一度お試しください。
+      </p>
+      <button
+        onClick={() => setRetryCount(c => c + 1)}
+        style={{
+          padding: '10px 24px', border: '1.5px solid #d5b8f5',
+          borderRadius: 10, fontSize: 13, cursor: 'pointer',
+          background: '#fff', color: '#5b3fa0', fontWeight: 600,
+        }}>
+        もう一度読み込む
+      </button>
+    </main>
+  )
 
   if (loading) return (
     <main style={{ maxWidth: 480, margin: '0 auto', padding: '40px 16px', textAlign: 'center' }}>

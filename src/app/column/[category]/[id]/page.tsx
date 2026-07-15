@@ -261,6 +261,10 @@ export function generateStaticParams() {
   { category: 'shukatsu-col', id: '9' },
   { category: 'shukatsu-col', id: '10' },
   { category: 'mental', id: '1' },
+  { category: 'sougi-col', id: '11' },
+  { category: 'haka-col', id: '11' },
+  { category: 'haka-col', id: '12' },
+  { category: 'shukatsu-col', id: '11' },
   ]
 }
 
