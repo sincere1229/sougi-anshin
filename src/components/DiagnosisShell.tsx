@@ -105,7 +105,7 @@ export default function DiagnosisShell({
 
   const share = () => {
     if (!result) return
-    const text = `【葬儀ナビ診断結果】${result.emoji}${result.label}\n${result.headline}\nhttps://sougi-anshin.vercel.app/diagnosis/${diagnosisId}`
+    const text = `【葬儀ナビ診断結果】${result.emoji}${result.label}\n${result.headline}\nhttps://www.sougi-anshin.net/diagnosis/${diagnosisId}`
     if (navigator.share) navigator.share({ text })
     else { navigator.clipboard.writeText(text); alert('クリップボードにコピーしました') }
   }
