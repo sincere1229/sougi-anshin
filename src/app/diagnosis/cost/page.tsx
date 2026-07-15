@@ -43,14 +43,14 @@ export default function Page() {
         },
         {
           name: 'ライフリセット（遺品整理）',
-          url: 'https://px.a8.net/svt/ejp?a8mat=4B5LK3+1GZLMA+36X8+1ZHAW1',
+          url: 'https://px.a8.net/svt/ejp?a8mat=4B5LK3+1GZN5U+36X8+1ZHAW1',
           description: '',
           badge: '遺品整理',
           forWho: '', notFor: '',
-          imageUrl: 'https://www23.a8.net/svt/bgt?aid=260601699089&wid=001&eno=01&mid=s00000014894012006000&mc=1',
+          imageUrl: 'https://www21.a8.net/svt/bgt?aid=260601699089&wid=003&eno=01&mid=s00000014894012006000&mc=1',
           imageWidth: 300,
           imageHeight: 250,
-          impUrl: 'https://www10.a8.net/0.gif?a8mat=4B5LK3+1GZLMA+36X8+1ZHAW1',
+          impUrl: 'https://www19.a8.net/0.gif?a8mat=4B5LK3+1GZN5U+36X8+1ZHAW1',
         },
         {
           name: '相続アシスト',

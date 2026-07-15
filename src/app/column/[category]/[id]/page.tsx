@@ -191,7 +191,7 @@ Q. 資料請求は無料ですか？
 A. 無料で資料請求できます。資料を取り寄せた後、加入するかどうかは自分で判断できます。
 
 将来の葬儀費用を事前に備えることは、自分自身の安心と家族への負担軽減につながります。まず複数の互助会の情報を集めて比較することが、納得感のある選択につながりやすくなります。`,
-      a8: [          { name: 'ごじょスケ（互助会葬儀）', url: 'https://af.moshimo.com/af/c/click?a_id=5646952&p_id=2851&pc_id=6517&pl_id=36426', desc: '全国の互助会葬儀を24時間一括検索。資料請求無料。', serviceSlug: 'gojosuke', imgUrl: 'https://image.moshimo.com/af-img/2091/000000036426.jpg', imgWidth: 300, imgHeight: 250, impUrl: 'https://i.moshimo.com/af/i/impression?a_id=5646952&p_id=2851&pc_id=6517&pl_id=36426' }],
+      a8: [          { name: 'ごじょスケ（互助会葬儀）', url: 'https://af.moshimo.com/af/c/click?a_id=5673569&p_id=2851&pc_id=6517&pl_id=36426', desc: '全国の互助会葬儀を24時間一括検索。資料請求無料。', serviceSlug: 'gojosuke', imgUrl: 'https://image.moshimo.com/af-img/2091/000000036426.jpg', imgWidth: 300, imgHeight: 250, impUrl: 'https://i.moshimo.com/af/i/impression?a_id=5673569&p_id=2851&pc_id=6517&pl_id=36426' }],
     },
   },
   'mental': {
