@@ -237,14 +237,16 @@ export async function generateStaticParams() {
   return Object.keys(ROADMAPS).map(slug => ({ slug }))
 }
 
-export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
-  const r = ROADMAPS[params.slug]
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
+  const { slug } = await params
+  const r = ROADMAPS[slug]
   if (!r) return {}
   return { title: `${r.title} | 葬儀ナビ`, description: `${r.diagnosisLabel}の方向け90日ロードマップ。` }
 }
 
-export default function RoadmapPage({ params }: { params: { slug: string } }) {
-  const r = ROADMAPS[params.slug]
+export default async function RoadmapPage({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params
+  const r = ROADMAPS[slug]
   if (!r) notFound()
   const phases = [
     { title: r.phase1Title, content: r.phase1 },
