@@ -32,14 +32,14 @@ export default function Page() {
         },
         {
           name: 'VERY CARD（電報・弔電）',
-          url: 'https://px.a8.net/svt/ejp?a8mat=4B5LK3+1JYRN6+32Q4+5ZU29',
+          url: 'https://px.a8.net/svt/ejp?a8mat=4B5LK3+1JYT6Q+32Q4+5ZU29',
           description: '',
           badge: '電報',
           forWho: '', notFor: '',
-          imageUrl: 'https://www21.a8.net/svt/bgt?aid=260601699094&wid=001&eno=01&mid=s00000014350001007000&mc=1',
+          imageUrl: 'https://www29.a8.net/svt/bgt?aid=260601699094&wid=003&eno=01&mid=s00000014350001007000&mc=1',
           imageWidth: 300,
           imageHeight: 250,
-          impUrl: 'https://www16.a8.net/0.gif?a8mat=4B5LK3+1JYRN6+32Q4+5ZU29',
+          impUrl: 'https://www12.a8.net/0.gif?a8mat=4B5LK3+1JYT6Q+32Q4+5ZU29',
         },
         {
           name: '墓石ナビ（一括見積り）',
