@@ -41,28 +41,6 @@ export default function Page() {
           imageHeight: 250,
           impUrl: 'https://www19.a8.net/0.gif?a8mat=4B5LK3+1GE7K2+4P1A+5ZU29',
         },
-        {
-          name: '家族葬のこれから',
-          url: 'https://px.a8.net/svt/ejp?a8mat=4B5LK3+1FSQEQ+5PHI+5ZMCH',
-          description: '',
-          badge: '葬祭',
-          forWho: '', notFor: '',
-          imageUrl: 'https://www27.a8.net/svt/bgt?aid=260601699087&wid=001&eno=01&mid=s00000026631001006000&mc=1',
-          imageWidth: 300,
-          imageHeight: 250,
-          impUrl: 'https://www12.a8.net/0.gif?a8mat=4B5LK3+1FSQEQ+5PHI+5ZMCH',
-        },
-        {
-          name: '相続アシスト',
-          url: 'https://af.moshimo.com/af/c/click?a_id=5647169&p_id=7301&pc_id=20977&pl_id=93281',
-          description: '相続の手間も不安も、まるごとゼロに。専門家チームによるゼロタッチ相続税申告。',
-          badge: '相続',
-          forWho: '', notFor: '',
-          imageUrl: 'https://image.moshimo.com/af-img/3982/000000093281.png',
-          imageWidth: 300,
-          imageHeight: 250,
-          impUrl: 'https://i.moshimo.com/af/i/impression?a_id=5647169&p_id=7301&pc_id=20977&pl_id=93281',
-        },
       ]}
       emotionMap={{
         'ippan-haka': { feature: '先祖代々の墓を守り続けられる', reason: '後継者がいて管理できる環境・宗派へのこだわりが一般墓に向いています。墓石代・永代使用料で100〜300万円程度が目安です。', pitfall: '後継者がいなくなった場合、無縁墓になるリスクがあります。将来のことも含めて家族で話し合っておきましょう。', firstStep: 'まず菩提寺があれば住職に相談しましょう。なければ地域の霊園・石材店に見学を申し込んでみてください。' },
