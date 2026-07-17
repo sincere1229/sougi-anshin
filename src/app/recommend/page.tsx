@@ -7,7 +7,28 @@ export const metadata: Metadata = {
   description: '終活サポーターしずくが厳選した、葬儀・電報・遺品整理・お墓・相続のサービス一覧。診断結果に合わせたおすすめも掲載。',
 }
 
-const SERVICES = [
+type ServiceItem = {
+  name: string
+  badge: string
+  badgeColor: string
+  desc: string
+  point: string
+  url: string
+  tag: string
+  impUrl?: string
+}
+
+type ServiceCategory = {
+  category: string
+  emoji: string
+  color: string
+  bgColor: string
+  borderColor: string
+  shizukuComment: string
+  items: ServiceItem[]
+}
+
+const SERVICES: ServiceCategory[] = [
   {
     category: '葬儀・家族葬',
     emoji: '🕊️',
@@ -79,8 +100,9 @@ const SERVICES = [
         badgeColor: '#2a6b2a',
         desc: '利用者満足度98%。全国の優良石材店から一括見積り。平均37万円。',
         point: '✓ あなたに合った墓石が見つかる',
-        url: 'https://px.a8.net/svt/ejp?a8mat=4B5LK3+1I6GTU+46CI+BYLJL',
+        url: 'https://px.a8.net/svt/ejp?a8mat=4B5LK3+1I6IDE+46CI+BYLJL',
         tag: 'お墓',
+        impUrl: 'https://www15.a8.net/0.gif?a8mat=4B5LK3+1I6IDE+46CI+BYLJL',
       },
       {
         name: 'みんなの海洋散骨',
@@ -88,8 +110,19 @@ const SERVICES = [
         badgeColor: '#1a5c8a',
         desc: '海洋散骨や遺骨の供養ならここ。自然に還る新しいお別れのかたち。',
         point: '✓ 費用を抑えた自然葬が可能',
-        url: 'https://px.a8.net/svt/ejp?a8mat=4B5LK3+1GE60I+4P1A+5ZU29',
+        url: 'https://px.a8.net/svt/ejp?a8mat=4B5LK3+1GE7K2+4P1A+5ZU29',
         tag: '散骨',
+        impUrl: 'https://www19.a8.net/0.gif?a8mat=4B5LK3+1GE7K2+4P1A+5ZU29',
+      },
+      {
+        name: '墓じまいパートナーズ',
+        badge: '改葬・墓じまい相談',
+        badgeColor: '#8a5c1a',
+        desc: '墓じまい・改葬手続きを専門業者へ相談できます。',
+        point: '✓ お墓の撤去や改葬をまとめて相談したい方に。',
+        url: 'https://af.moshimo.com/af/c/click?a_id=5676996&p_id=7496&pc_id=21651&pl_id=94106',
+        tag: '墓じまい',
+        impUrl: 'https://i.moshimo.com/af/i/impression?a_id=5676996&p_id=7496&pc_id=21651&pl_id=94106',
       },
     ],
   },
@@ -194,7 +227,8 @@ export default function RecommendPage() {
 
             {/* サービスカード */}
             {sec.items.map((item, j) => (
-              <a key={j} href={item.url} target="_blank" rel="nofollow noopener noreferrer"
+              <div key={j}>
+              <a href={item.url} target="_blank" rel="nofollow noopener noreferrer"
                 style={{
                   display: 'block',
                   background: '#fff',
@@ -238,6 +272,16 @@ export default function RecommendPage() {
                   詳しく見てみる →
                 </div>
               </a>
+              {item.impUrl && (
+                <img
+                  src={item.impUrl}
+                  width={1}
+                  height={1}
+                  style={{ border: 'none' }}
+                  alt=""
+                />
+              )}
+              </div>
             ))}
           </div>
         ))}
